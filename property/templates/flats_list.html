@@ -37,16 +37,16 @@
                   <p>город</p>
                   <div class="form-group">
                     <select name="town" class="form-control">
-                      <option {%ifequal town active_town%}selected {%endifequal%}value="">---</option>
+                      <option {% ifequal town active_town %}selected {% endifequal %}value="">---</option>
                       {% for town in towns %}
-                        <option {%ifequal town active_town%}selected {%endifequal%}value="{{town}}">{{town}}</option>
+                        <option {% ifequal town active_town %}selected {% endifequal %}value="{{town}}">{{ town }}</option>
                       {% endfor %}
                     </select>
                   </div>
                   <div class="form-group ">
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox" name="new_building" value="1" {%if new_building%}checked {%endif%}>
+                        <input type="checkbox" name="new_building" value="1" {% if new_building %}checked {% endif %}>
                         только новостройки
                       </label>
                     </div>
@@ -55,14 +55,14 @@
                   <div class="form-group ">
                     <div class="input-group">
                       <span class="input-group-addon">от</span>
-                      <input autocomplete="off" type="text" value="{%if min_price %}{{min_price}}{%endif%}" name="min_price" class="form-control js-price-format" placeholder="любая">
+                      <input autocomplete="off" type="text" value="{% if min_price %}{{ min_price }}{% endif %}" name="min_price" class="form-control js-price-format" placeholder="любая">
                       <span class="input-group-addon">р.</span>
                     </div>
                   </div>
                   <div class="form-group ">
                     <div class="input-group">
                       <span class="input-group-addon">до</span>
-                      <input autocomplete="off" type="text" value="{%if max_price %}{{max_price}}{%endif%}" name="max_price" class="form-control js-price-format" placeholder="любая">
+                      <input autocomplete="off" type="text" value="{% if max_price %}{{ max_price }}{% endif %}" name="max_price" class="form-control js-price-format" placeholder="любая">
                       <span class="input-group-addon">р.</span>
                     </div>
                   </div>
@@ -87,7 +87,7 @@
                           </div>
                           <div class="row">
                             <div class="col-sm-12">
-                              <p><i class="glyphicon glyphicon-map-marker"></i>&nbsp;{{ flat.town }}, {%if flat.settlement%} {{flat.settlement}}, {%endif%}{{ flat.address }}</p>
+                              <p><i class="glyphicon glyphicon-map-marker"></i>&nbsp;{{ flat.town }}, {% if flat.settlement %} {{ flat.settlement }}, {% endif %}{{ flat.address }}</p>
                             </div>
                           </div>
                         </div>
