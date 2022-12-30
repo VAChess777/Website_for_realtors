@@ -29,7 +29,11 @@ class Flat(models.Model):
         'Текст объявления',
         blank=True
     )
-    price = models.IntegerField('Цена квартиры', db_index=True)
+
+    price = models.IntegerField(
+        'Цена квартиры',
+        db_index=True
+    )
 
     town = models.CharField(
         'Город, где находится квартира',
